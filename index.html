@@ -110,7 +110,7 @@
 </head>
 
 <body>
-    <div class="glitch-overlay"></div>
+    <div class="glitch-overlay" onclick="playAudio()"></div>
     <div class="green-text">
         Congratulations, you have completed the first chapter of this puzzle. 
         As you go through this puzzle, each step will grow increasingly difficult; the steps you've encountered were only low-level puzzles. 
@@ -118,23 +118,15 @@
     </div>
     <div class="top-right-text">societlost@gmail.com</div>
     <div class="bottom-text">To proceed to the second chapter of this puzzle, please contact us through email and send us an image of this webpage; we will then tell you on how to complete the chapter, sincerely, LCY.</div>
-    <audio id="background-audio" muted>
+    <audio id="background-audio">
         <source src="Audio.mp3" type="audio/mpeg">
-        <!-- Add additional source elements for other formats if available -->
         Your browser does not support the audio element.
     </audio>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        function playAudio() {
             var audio = document.getElementById("background-audio");
-
-            // Enable autoplay on first user interaction
-            document.body.addEventListener("click", function() {
-                if (audio.muted) {
-                    audio.muted = false;
-                    audio.play();
-                }
-            });
-        });
+            audio.play();
+        }
     </script>
 </body>
 
