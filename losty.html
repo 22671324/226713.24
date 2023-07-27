@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Glitch Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Future', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("Static.gif");
+            background-size: cover;
+            opacity: 0.7;
+            animation: glitchOverlayAnimation 5s infinite;
+            z-index: 1;
+        }
+
+        @keyframes glitchOverlayAnimation {
+            0%, 100% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-2px, -2px) skewX(1deg) skewY(1deg);
+            }
+            50% {
+                transform: translate(2px, 2px) skewX(-1deg) skewY(-1deg);
+            }
+            75% {
+                transform: translate(-2px, 2px) skewX(1deg) skewY(-1deg);
+            }
+        }
+
+        .green-text {
+            color: #8FBC8F;
+            font-size: 20px;
+            font-weight: normal;
+            max-width: 80%;
+            margin: 0 auto 20px;
+            text-align: center;
+            display: block;
+            position: relative;
+            z-index: 2;
+            animation: glitchTextAnimation 5s infinite;
+        }
+
+        @keyframes glitchTextAnimation {
+            0%, 100% {
+                transform: translate(0);
+                color: #8FBC8F;
+            }
+            4.17% {
+                color: #f00;
+            }
+            8.33% {
+                color: #8FBC8F;
+            }
+            12.5% {
+                color: #00f;
+            }
+            16.67% {
+                color: #8FBC8F;
+            }
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 30px;
+            color: #8FBC8F;
+            font-size: 16px;
+            font-weight: normal;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+            animation: glitchTextAnimation 5s infinite;
+        }
+
+        .top-right-text {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #8FBC8F;
+            font-size: 16px;
+            font-weight: normal;
+            z-index: 2;
+            animation: glitchTextAnimation 5s infinite;
+        }
+
+        @font-face {
+            font-family: 'Future';
+            src: local('Future'), url('Future.ttf') format('truetype');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glitch-overlay"></div>
+    <div class="green-text">
+        Congratulations, you have completed the first chapter of this puzzle. 
+        As you go through this puzzle, each step will grow increasingly difficult; the steps you've encountered were only low-level puzzles. 
+        We added puzzle that can be easily avoided by inspecting each website's code to see whether people from all around the globe will join and take it seriously. Best wishes.
+    </div>
+    <div class="top-right-text">societlost@gmail.com</div>
+    <div class="bottom-text">To proceed to the second chapter of this puzzle, please contact us through email and send us an image of this webpage; we will then tell you on how to complete the chapter, sincerely, LSY.</div>
+    <audio src="your_audio_file.wav" autoplay loop></audio>
+</body>
+
+</html>
